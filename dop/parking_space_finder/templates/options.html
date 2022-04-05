@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Options Page</title>
+    <link rel="icon" href="{{ url_for('static', filename='picon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='logstyle.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Lexend+Deca&display=swap" rel="stylesheet">
+    <script type="text/javascript"> window.$crisp=[];window.CRISP_WEBSITE_ID="82ae20b8-4281-4759-8ada-9fc5d06c8113";(function(){ d=document;s=d.createElement("script"); s.src="https://client.crisp.chat/l.js"; s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})(); </script>
+
+
+
+</head>
+
+
+<body>
+<div class="split left">
+    <div class="contentl">
+        <img class="placeholder" src="{{ url_for('static', filename='placeholder.png') }}"  alt="placeholder">
+        <img class="car" src="{{ url_for('static', filename='car.png') }}" alt="car">
+    </div>
+    <h1 class="park">Parking Space Finder (A-type)</h1>
+</div>
+<div class="split right">
+        <h1 class="wel">Welcome</h1>
+        <div class="para">
+            <p>You have successfully logged in. Choose one of the below options
+            for further details</p>
+        </div>
+        <div class="frs">
+            <form action="http://localhost:5000/parkinglist" method='POST'>
+                <input class="butn" type="submit" value="Find Price for Vehicles">
+                <br>
+            </form>
+
+            <form action="http://localhost:5000/choice1" method='POST'>
+                <input class="butn" type="submit" value="Find a Parking Space">
+                <br>
+            </form>
+            <form action="http://localhost:5000/choice2" method='POST'>
+                <input class="butn" type="submit" value="Find Your Car">
+                <br>
+            </form>
+            <form action="http://localhost:5000/choice3" method='POST'>
+                <input class="butn" type="submit" value="Find the Exit">
+            </form>
+            <form action="http://localhost:5000/choice4" method='POST'>
+                <input class="butn" type="submit" value="Find the size">
+            </form>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"><img class="icon" src="{{ url_for('static', filename='facebook.png') }}">
+            <a href="https://twitter.com/?lang=en" target="_blank"><img class="icon" src="{{ url_for('static', filename='twitter.png') }}">
+            <a href="mailto:jeevaasolanki@gmail.com" target="_blank"><img class="icon" src="{{ url_for('static', filename='mail.png') }}"></a>
+        </div>
+</div>
+</body>
+</html>

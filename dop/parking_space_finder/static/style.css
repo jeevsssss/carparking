@@ -1,0 +1,118 @@
+body{
+margin: 0;
+text-align: center;
+}
+hr{
+width: 80%;
+border-width: 5px 0 0 0;
+border-style:solid;
+color: grey;
+}
+.v1{
+border-left: 5px solid grey;
+position: relative;
+bottom: 10px;
+margin-left: 10px;
+height: 1000px;
+}
+.top_container{
+background-color: #e4f9f5;
+padding-top: 100px;
+padding-bottom: 700px;
+position: relative;
+}
+.lotnum{
+color: #40514e;
+font-family: 'Merriweather', serif;
+line-height: 2;
+}
+.A{
+background-color: #30e3ca;
+position: relative;
+top: 200px;
+width: 100px;
+height: 100px;
+left: 20px;
+margin-right: 10px;
+display: inline-block;
+transform: skewX(-20deg);
+}
+.laneA{
+color: grey;
+position: relative;
+top: 200px;
+width: 65%;
+border-width: 5px 0 0 0;
+border-style:dashed;
+}
+.B{
+background-color: #30e3ca;
+position: relative;
+top: 200px;
+width: 100px;
+height: 100px;
+right: 20px;
+margin-right: 10px;
+display: inline-block;
+transform: skewX(-20deg);
+}
+.C{
+background-color: #30e3ca;
+position: relative;
+top: 400px;
+width: 100px;
+height: 100px;
+left: 20px;
+margin-right: 10px;
+display: inline-block;
+transform: skewX(-20deg);
+}
+.laneC{
+color: grey;
+position: relative;
+top: 400px;
+width: 65%;
+border-width: 5px 0 0 0;
+border-style:dashed;
+}
+.D{
+background-color: #30e3ca;
+position: relative;
+top: 400px;
+width: 100px;
+height: 100px;
+right: 20px;
+margin-right: 10px;
+display: inline-block;
+transform: skewX(-20deg);
+}
+.E{
+background-color: #30e3ca;
+position: relative;
+top: 600px;
+width: 100px;
+height: 100px;
+left: 20px;
+margin-right: 10px;
+display: inline-block;
+transform: skewX(-20deg);
+}
+.laneE{
+color: grey;
+position: relative;
+top: 600px;
+width: 65%;
+border-width: 5px 0 0 0;
+border-style:dashed;
+}
+.F{
+background-color: #30e3ca;
+position: relative;
+top: 600px;
+width: 100px;
+height: 100px;
+right: 20px;
+margin-right: 10px;
+display: inline-block;
+transform: skewX(-20deg);
+}

@@ -1,0 +1,112 @@
+.park{
+color: #595959;
+font-size: 70px;
+position: relative;
+top: 100px;
+text-align: center;
+font-family: 'Heebo', sans-serif;
+}
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+  background-color: #404040;
+}
+.placeholder{
+width: 150px;
+height: 150px;
+}
+.car{
+position: relative;
+top: 250px;
+width: 350px;
+height: 350px;
+}
+.contentl{
+position: relative;
+top: 100px;;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+}
+.wel{
+color: #d9d9d9;
+position: relative;
+font-size: 60px;
+top: 100px;
+left: 200px;
+font-family: 'Heebo', sans-serif;
+}
+.para{
+color: grey;
+width: 50%;
+position: relative;
+top: 100px;
+left: 200px;
+font-size: 20px;
+font-family: 'Heebo', sans-serif;
+}
+.frs{
+position: relative;
+width: 50%;
+top: 100px;
+left: 200px;
+font-size: 20px;
+font-family: 'Heebo', sans-serif;
+}
+.insert[type=text]{
+font-size: 20px;
+width: 400px;
+height: 30px;
+background-color: #404040;
+border-color: grey;
+border-style: solid;
+color: grey;
+}
+.insert[type=password]{
+font-size: 20px;
+width: 400px;
+height: 30px;
+background-color: #404040;
+border-color: grey;
+border-style: solid;
+color: grey;
+}
+.butn {
+  font-family: Georgia;
+  width: 405px;
+  height: 45px;
+  color: #595959;
+  font-size: 20px;
+  border-radius: px;
+  background: #d9d9d9;
+  padding: 10px 20px 10px 20px;
+  border: solid grey 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.butn:hover {
+  background: #f2f2f2;
+  text-decoration: none;
+}
+.social{
+position: relative;
+top: 200px;
+left: 200px;
+}
+.icon{
+width: 50px;
+height: 50px;
+margin-right: 70px;
+}

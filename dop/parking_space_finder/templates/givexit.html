@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parking Area Blueprint for exit</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='blueprintings.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento|News+Cycle&display=swap" rel="stylesheet">
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+  .modal {
+  display: none;position: fixed;z-index: 1;padding-top: 100px; 
+  left: 0;top: 0;width: 100%;height: 100%;overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  }
+  .modal-content {
+  position: relative;background-color: #fefefe;margin: auto;
+  padding: 0;border: 1px solid #888;width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+  }
+  @-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+  }
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  .close {
+    color: white;float: right;
+    font-size: 28px;font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+  .modal-body {padding: 2px 16px;}
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+  }
+</style>
+</head>
+<body class = "body">
+
+<form action="http://localhost:5000/options" method='POST'>
+    <input class="butn" type="submit" value="Go to options Page">
+</form>
+
+<button id="myBtn" method='POST' input class="butn" type="submit">Check the Time</button> 
+<div id="myModal" class="modal"><div class="modal-content"> <div class="modal-header"> 
+    <span class="close">&times;</span> <h2>Time</h2>
+    </div>
+    <div class="modal-body">
+      <p>Car was parked for {{time}}</p>
+    </div>
+    <div class="modal-footer">
+      <h3>Bye, See you again!</h3>
+    </div>
+  </div>
+</div>
+<script>
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("myBtn");
+  var span = document.getElementsByClassName("close")[0];
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  </script>
+
+
+<ul>
+  <li class="active">Follow the below path from {{name[0]}} to exit</li>
+</ul>
+<canvas id="myCanvas" width="1495" height="1500" style="border:1px solid #000000;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script>
+var parklot = '{{name[0]}}'
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var ctr = c.getContext("2d");
+ctx.beginPath();
+
+if(parklot == 'A1')
+{ctr.beginPath();
+ctr.moveTo(60, 1400);
+ctr.lineTo(60, 150);
+ctr.lineTo(350, 150);
+ctr.lineTo(350, 230);
+ctr.lineWidth=5
+ctr.stroke();}
+
+ctx.transform(1, 0, -0.3, 1, 20, 20);
+if({{name[1]['A1']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle= "#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A1", 370, 265);
+
+if(parklot == 'A2')
+{ctr.beginPath();
+ctr.moveTo(450, 1400);
+ctr.lineTo(76, 130);
+ctr.lineTo(500, 130);
+ctr.lineTo(530, 230);
+ctr.lineWidth=5;
+ctr.strokeStyle="#11144c";
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['A2']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A2", 370, 265);
+
+if(parklot == 'A3')
+{ctr.beginPath();
+ctr.moveTo(350, 1400);
+ctr.lineTo(-33, 130);
+ctr.lineTo(500, 130);
+ctr.lineTo(530, 230);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['A3']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A3", 370, 265);
+
+if(parklot == 'A4')
+{ctr.beginPath();
+ctr.moveTo(220 , 1400);
+ctr.lineTo(-163, 130);
+ctr.lineTo(500, 130);
+ctr.lineTo(530, 230);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['A4']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A4", 370, 265);
+
+if(parklot == 'A5')
+{ctr.beginPath();
+ctr.moveTo(90, 1400);
+ctr.lineTo(-283, 130);
+ctr.lineTo(500, 130);
+ctr.lineTo(530, 230);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['A5']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A5", 370, 265);
+
+if(parklot == 'A6')
+{ctr.beginPath();
+ctr.moveTo( -15, 1400);
+ctr.lineTo(-403, 130);
+ctr.lineTo(500, 130);
+ctr.lineTo(530, 230);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['A6']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A6", 370, 265);
+
+if(parklot == 'A7')
+{ctr.beginPath();
+ctr.moveTo(-140, 1400);
+ctr.lineTo(-523, 130);
+ctr.lineTo(500, 130);
+ctr.lineTo(530, 230);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['A7']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A7", 370, 265);
+
+if(parklot == 'A8')
+{ctr.beginPath();
+ctr.moveTo(-260, 1400);
+ctr.lineTo(-643, 130);
+ctr.lineTo(500, 130);
+ctr.lineTo(530, 230);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['A8']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(350, 200, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("A8", 370, 265);
+
+ctx.beginPath();
+ctx.setLineDash([15, 10]);
+ctx.moveTo(-500, 310);
+ctx.lineTo(490, 310);
+ctx.lineWidth=5;
+ctx.strokeStyle="grey";
+ctx.stroke();
+
+ctx.strokeStyle="#11144c";
+
+if(parklot == 'B1')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-400, 1400);
+ctr.lineTo(-655, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctx.strokeStyle="black";
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B1']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B1", -590, 390);
+
+if(parklot == 'B2')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-500, 1400);
+ctr.lineTo(-775, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B2']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B2", -590, 390);
+
+if(parklot == 'B3')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-620, 1400);
+ctr.lineTo(-895, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctx.strokeStyle="black";
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B3']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B3", -590, 390);
+
+if(parklot == 'B4')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-740, 1400);
+ctr.lineTo(-1015, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B4']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B4", -590, 390);
+
+if(parklot == 'B5')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-860, 1400);
+ctr.lineTo(-1135, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B5']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B5", -590, 390);
+
+if(parklot == 'B6')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-980, 1400);
+ctr.lineTo(-1255, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B6']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B6", -590, 390);
+
+if(parklot == 'B7')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1100, 1400);
+ctr.lineTo(-1375, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B7']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B7", -590, 390);
+
+if(parklot == 'B8')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1220, 1400);
+ctr.lineTo(-1495, 500);
+ctr.lineTo(-415, 500);
+ctr.lineTo(-440, 410);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['B8']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-610, 322, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("B8", -590, 390);
+
+if(parklot == 'C1')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1340, 1400);
+ctr.lineTo(-1615, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C1']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C1", -1480, 670);
+
+if(parklot == 'C2')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1460, 1400);
+ctr.lineTo(-1735, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C2']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C2", -1480, 670);
+
+if(parklot == 'C3')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1580, 1400);
+ctr.lineTo(-1855, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C3']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C3", -1480, 670);
+
+if(parklot == 'C4')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1700, 1400);
+ctr.lineTo(-1975, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C4']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C4", -1480, 670);
+
+if(parklot == 'C5')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1825, 1400);
+ctr.lineTo(-2095, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C5']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C5", -1480, 670);
+
+if(parklot == 'C6')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-1945, 1400);
+ctr.lineTo(-2215, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C6']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C6", -1480, 670);
+
+if(parklot == 'C7')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-2063, 1400);
+ctr.lineTo(-2335, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C7']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C7", -1480, 670);
+
+if(parklot == 'C8')
+{ctr.beginPath();
+ctr.setLineDash([0,0]);
+ctr.moveTo(-2180, 1400);
+ctr.lineTo(-2455, 500);
+ctr.lineTo(-1360, 500);
+ctr.lineTo(-1333, 600);
+ctr.lineWidth=5;
+ctr.stroke();}
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+if({{name[1]['C8']}})
+ctx.fillStyle= "#f66767";
+else
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-1500, 600, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("C8", -1480, 670);
+
+ctr.beginPath();
+ctr.setLineDash([15, 10]);
+ctr.moveTo(-1350, 710);
+ctr.lineTo(-2360, 710);
+ctr.lineWidth=5;
+ctr.strokeStyle="grey";
+ctr.stroke();
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D1", -2440, 785);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D2", -2440, 785);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D3", -2440, 785);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D4", -2440, 785);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D5", -2440, 785);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D6", -2440, 785);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D7", -2440, 785);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-2460, 720, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("D8", -2440, 785);
+
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E1", -3315, 1065);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E2", -3315, 1065);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E3", -3315, 1065);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E4", -3315, 1065);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E5", -3315, 1065);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E6", -3315, 1065);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E7", -3315, 1065);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-3340, 1000, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("E8", -3315, 1065);
+
+ctr.beginPath();
+ctr.setLineDash([15, 10]);
+ctr.moveTo(-4200, 1110);
+ctr.lineTo(-3150, 1110);
+ctr.lineWidth=5;
+ctr.strokeStyle="grey";
+ctr.stroke();
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F1", -4272, 1185);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F2", -4272, 1185);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F3", -4272, 1185);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F4", -4272, 1185);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F5", -4272, 1185);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F6", -4272, 1185);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F7", -4272, 1185);
+
+ctx.transform(1, 0, 0, 1, 120, 0);
+ctx.fillStyle="#30e3ca";
+ctx.fillRect(-4300, 1120, 100, 100);
+ctx.font = "45px Merriweather";
+ctx.fillStyle="#40514e";
+ctx.fillText("F8", -4272, 1185);
+</script>
+</body>
+</html>

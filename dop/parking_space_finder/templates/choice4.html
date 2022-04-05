@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>car size finder</title>
+    <link rel="icon" href="{{ url_for('static', filename='picon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='logstyle.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Lexend+Deca&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<div class="split left">
+    <div class="contentl">
+        <img class="placeholder" src="{{ url_for('static', filename='placeholder.png') }}"  alt="placeholder">
+        <img class="car" src="{{ url_for('static', filename='car.png') }}" alt="car">
+    </div>
+    <h1 class="park">Parking Space Finder</h1>
+</div>
+<div class="split right">
+        <h1 class="wel">Welcome</h1>
+        <div class="frs">
+            <form action="http://localhost:5000/options" method='POST'>
+                <label style="color: grey;">your car belong to A-type cars . good to go!!!</label><br>
+                <input class="butn" type="submit" value="okay">
+            </form>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"><img class="icon" src="{{ url_for('static', filename='facebook.png') }}">
+            <a href="https://twitter.com/?lang=en" target="_blank"><img class="icon" src="{{ url_for('static', filename='twitter.png') }}">
+            <a href="mailto:jeevaasolanki@gmail.com" target="_blank"><img class="icon" src="{{ url_for('static', filename='mail.png') }}"></a>
+        </div>
+</div>
+</body>
+
+</html>

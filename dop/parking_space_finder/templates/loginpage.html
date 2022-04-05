@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="icon" href="{{ url_for('static', filename='picon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='logstyle.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Lexend+Deca&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+<div class="split left">
+    <div class="contentl">
+        <img class="placeholder" src="{{ url_for('static', filename='placeholder.png') }}"  alt="placeholder">
+        <img class="car" src="{{ url_for('static', filename='car.png') }}" alt="car">
+    </div>
+    <h1 class="park">Parking Space Finder</h1>
+</div>
+<div class="split right">
+        <h1 class="wel">Welcome</h1>
+        <div class="para">
+            <p>This is a website to help people find their way to an empty lot in your parking area.
+            Please enter your details to login</p>
+        </div>
+        <div class="frs">
+            <form action="http://localhost:5000/loginpage" method='POST'>
+                <label style="color: grey;">Username</label><br>
+                <input class="insert" type="text" name="username"><br>
+                <label style="color: grey;">Password</label><br>
+                <input class="insert" type="password" name="password"><br><br>
+                <input class="butn" type="submit" value="LOGIN">
+            </form>
+            <form action="http://localhost:5000/signup" method='POST'>
+                <input class="butn" type="submit" value="SIGNUP">
+            </form>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/" target="_blank"><img class="icon" src="{{ url_for('static', filename='facebook.png') }}">
+            <a href="https://twitter.com/?lang=en" target="_blank"><img class="icon" src="{{ url_for('static', filename='twitter.png') }}">
+            <a href="mailto:jeevaasolanki@gmail.com" target="_blank"><img class="icon" src="{{ url_for('static', filename='mail.png') }}"></a>
+        </div>
+</div>
+</body>
+
+</html>

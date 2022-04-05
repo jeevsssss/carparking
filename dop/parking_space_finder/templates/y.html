@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .alert {
+          padding: 27px;background-color: red;
+          color: whitesmoke;height: 10px;width: 350px;
+        }
+        
+        .closebtn {
+          margin-left: 15px;color: whitesmoke;font-weight: bold;
+          float: right;font-size: 22px;line-height: 20px;
+          cursor: pointer;transition: 0.3s;
+        }
+        
+        .closebtn:hover {
+          color: black;
+        }
+        </style>
+        </head>
+    <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="icon" href="{{ url_for('static', filename='picon.ico') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='logstyle.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo|Lexend+Deca&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<div class="split left">
+    <div class="contentl">
+        <img class="placeholder" src="{{ url_for('static', filename='placeholder.png') }}"  alt="placeholder">
+        <img class="car" src="{{ url_for('static', filename='car.png') }}" alt="car">
+    </div>
+    <h1 class="park">Parking Space Finder</h1>
+</div>
+<div class="split right">
+        <h1 class="wel">Welcome</h1>
+        <div class="para">
+            <p>Please enter your details below</p>
+        </div>
+        <div class="frs">
+            <form action="http://localhost:5000/givexit" method='POST'>
+                <label style="color: grey;">Car Number</label><br>
+                <input class="insert" type="text" name="carnum"><br><br>
+                <input class="butn" type="submit" value="Find Exit">
+            </form>
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                <strong>Car is not parked in parking area!</strong> 
+            </div>
+        </div>
+        <div class="social">
+             <img class="icon" src="{{ url_for('static', filename='facebook.png') }}">
+            <img class="icon" src="{{ url_for('static', filename='twitter.png') }}">
+            <a href="mailto:rstephen2000@gmail.com"><img class="icon" src="{{ url_for('static', filename='mail.png') }}"></a>
+        </div>
+</div>
+</body>
+
+</html>
