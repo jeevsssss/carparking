@@ -6,6 +6,7 @@
 - [Introduction](#introduction)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Algorithm used](#algorithm-used)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -29,6 +30,8 @@ Check out the live demo of the Car Parking Management System [here](https://carp
 - **Back-end:** PHP, MySQL , Pyhton
 - **Frameworks/Libraries:** Bootstrap, jQuery, Flask
 
+## Algorithm used
+The Car Parking Management System utilizes a heap data structure to efficiently find and allocate empty parking spaces. The heap maintains a priority queue of available parking spaces based on their proximity to the entrance. When a customer requests a parking space, the system retrieves the topmost element from the heap, which represents the nearest available space. This approach ensures that the allocated spaces are optimally distributed and minimizes the search time for available spots.
 
 ## Usage
 1. Access the application through your web browser.
